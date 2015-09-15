@@ -158,32 +158,32 @@ if [ -d "$office2011" ]; then
   # change them according to your receipts if necessary!
 
   # Excel 2016
-  if /usr/bin/pkgutil --pkgs=com.microsoft.package.Microsoft_Excel.app; then
+  if /usr/sbin/pkgutil --pkgs=com.microsoft.package.Microsoft_Excel.app; then
     logme "Disabling Excel 2016 first-run dialog"
     /usr/bin/defaults write $3/Library/Preferences/com.microsoft.Excel kSubUIAppCompletedFirstRunSetup1507 -bool true
   fi
 
   # OneNote 2016
-  if /usr/bin/pkgutil --pkgs=com.microsoft.package.Microsoft_OneNote.app; then
+  if /usr/sbin/pkgutil --pkgs=com.microsoft.package.Microsoft_OneNote.app; then
     logme "Disabling OneNote 2016 first-run dialog"
     /usr/bin/defaults write $3/Library/Preferences/com.microsoft.onenote.mac kSubUIAppCompletedFirstRunSetup1507 -bool true
   fi
 
   # Outlook 2016
-  if /usr/bin/pkgutil --pkgs=com.microsoft.package.Microsoft_Outlook.app; then
+  if /usr/sbin/pkgutil --pkgs=com.microsoft.package.Microsoft_Outlook.app; then
     logme "Disabling Outlook 2016 first-run dialog"
     /usr/bin/defaults write $3/Library/Preferences/com.microsoft.Outlook kSubUIAppCompletedFirstRunSetup1507 -bool true
     /usr/bin/defaults write $3/Library/Preferences/com.microsoft.Outlook FirstRunExperienceCompletedO15 -bool true
   fi
 
   # PowerPoint 2016
-  if /usr/bin/pkgutil --pkgs=com.microsoft.package.Microsoft_PowerPoint.app; then
+  if /usr/sbin/pkgutil --pkgs=com.microsoft.package.Microsoft_PowerPoint.app; then
     logme "Disabling PowerPoint 2016 first-run dialog"
     /usr/bin/defaults write $3/Library/Preferences/com.microsoft.PowerPoint kSubUIAppCompletedFirstRunSetup1507 -bool true
   fi
 
   # Word 2016
-  if /usr/bin/pkgutil --pkgs=com.microsoft.package.Microsoft_Word.app; then
+  if /usr/sbin/pkgutil --pkgs=com.microsoft.package.Microsoft_Word.app; then
     logme "Disabling Word 2016 first-run dialog"
     /usr/bin/defaults write $3/Library/Preferences/com.microsoft.Word kSubUIAppCompletedFirstRunSetup1507 -bool true
   fi
