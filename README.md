@@ -8,3 +8,5 @@ More detailed instructions can be found here: http://www.richard-purves.com/?p=7
 This script follows the work by Richard Purves, but adds the removal of all Office 2011 components except Lync. All receipts are forgotten and applications removed - including Microsoft Auto Update and Microsoft Error Reporting.
 
 You could you the script as a Munki-on-demand if you wish.
+
+Luggage Makefile is included. Edit to match your requirements.
