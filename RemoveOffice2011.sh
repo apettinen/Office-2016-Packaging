@@ -11,7 +11,8 @@
 
 # Antti Pettinen
 # TUTMac @ tut.fi
-# 11.09.2015
+# 16.09.2015
+# added setting telemetry reporting to false
 
 # Set up log file, folder and function
 LOGFOLDER="/usr/local/logs/"
@@ -159,33 +160,39 @@ if [ -d "$office2011" ]; then
 
   # Excel 2016
   if /usr/sbin/pkgutil --pkgs=com.microsoft.package.Microsoft_Excel.app; then
-    logme "Disabling Excel 2016 first-run dialog"
+    logme "Disabling Excel 2016 first-run dialog and setting telemetry reporting to MS to false"
     /usr/bin/defaults write $3/Library/Preferences/com.microsoft.Excel kSubUIAppCompletedFirstRunSetup1507 -bool true
+    /usr/bin/defaults write $3/Library/Preferences/com.microsoft.Excel SendAllTelemetryEnabled -bool false
   fi
 
   # OneNote 2016
   if /usr/sbin/pkgutil --pkgs=com.microsoft.package.Microsoft_OneNote.app; then
-    logme "Disabling OneNote 2016 first-run dialog"
+    logme "Disabling OneNote 2016 first-run dialog and setting telemetry reporting to MS to false"
     /usr/bin/defaults write $3/Library/Preferences/com.microsoft.onenote.mac kSubUIAppCompletedFirstRunSetup1507 -bool true
+    /usr/bin/defaults write $3/Library/Preferences/com.microsoft.onenote.mac SendAllTelemetryEnabled -bool false
   fi
 
   # Outlook 2016
   if /usr/sbin/pkgutil --pkgs=com.microsoft.package.Microsoft_Outlook.app; then
-    logme "Disabling Outlook 2016 first-run dialog"
+    logme "Disabling Outlook 2016 first-run dialog and setting telemetry reporting to MS to false"
     /usr/bin/defaults write $3/Library/Preferences/com.microsoft.Outlook kSubUIAppCompletedFirstRunSetup1507 -bool true
     /usr/bin/defaults write $3/Library/Preferences/com.microsoft.Outlook FirstRunExperienceCompletedO15 -bool true
+    /usr/bin/defaults write $3/Library/Preferences/com.microsoft.Outlook SendAllTelemetryEnabled -bool false
+
   fi
 
   # PowerPoint 2016
   if /usr/sbin/pkgutil --pkgs=com.microsoft.package.Microsoft_PowerPoint.app; then
-    logme "Disabling PowerPoint 2016 first-run dialog"
+    logme "Disabling PowerPoint 2016 first-run dialog and setting telemetry reporting to MS to false"
     /usr/bin/defaults write $3/Library/Preferences/com.microsoft.PowerPoint kSubUIAppCompletedFirstRunSetup1507 -bool true
+    /usr/bin/defaults write $3/Library/Preferences/com.microsoft.PowerPoint SendAllTelemetryEnabled -bool false
   fi
 
   # Word 2016
   if /usr/sbin/pkgutil --pkgs=com.microsoft.package.Microsoft_Word.app; then
-    logme "Disabling Word 2016 first-run dialog"
+    logme "Disabling Word 2016 first-run dialog and setting telemetry reporting to MS to false"
     /usr/bin/defaults write $3/Library/Preferences/com.microsoft.Word kSubUIAppCompletedFirstRunSetup1507 -bool true
+    /usr/bin/defaults write $3/Library/Preferences/com.microsoft.Word SendAllTelemetryEnabled -bool false
   fi
 
 else
