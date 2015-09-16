@@ -7,7 +7,7 @@ More detailed instructions can be found here: http://www.richard-purves.com/?p=7
 ## RemoveOffice2011
 This script follows the work by Richard Purves, but adds the removal of all Office 2011 components except Lync. All receipts are forgotten and applications removed - including Microsoft Auto Update and Microsoft Error Reporting.
 
-You could you the script as a Munki-on-demand if you wish.
+You could use the script as a Munki-on-demand if you wish.
 
 Here's an example to add to your pkginfo file:
 ```
