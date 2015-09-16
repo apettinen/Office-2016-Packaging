@@ -9,9 +9,9 @@ This script follows the work by Richard Purves, but adds the removal of all Offi
 
 You could you the script as a Munki-on-demand if you wish.
 
-Here's an example to add to your pkginfo-file:
+Here's an example to add to your pkginfo file:
 ```
-<key>OndDemand</key>
+<key>OnDemand</key>
 <true/>
 <key>minimum_munki_version</key>
 <string>2.3.0</string>
