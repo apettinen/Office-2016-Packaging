@@ -18,6 +18,7 @@
 LOGFOLDER="/usr/local/logs/"
 LOG=$LOGFOLDER"/Office-2011-Uninstall.log"
 error=0
+O2016LICFILE="com.microsoft.office.licensingV2.plist"
 
 if [ ! -d "$LOGFOLDER" ]; then
   /bin/mkdir -p $LOGFOLDER
@@ -110,7 +111,9 @@ if [ -d "$office2011" ]; then
   # Remove LaunchDaemons, preference files and any helper tools
   logme "Deleting LaunchDaemons, Prefs and helper tools"
   /bin/rm -R /Library/LaunchDaemons/com.microsoft.* | tee -a ${LOG}
-  /bin/rm -R /Library/Preferences/com.microsoft.* | tee -a ${LOG}
+  #preserve office 2016 license file, all other preferences are removed
+  # if you want to preserve other files, add the notation -not -name "preserve.this.file" before the -delete flag
+  /usr/bin/find /Library/Preferences/ -type f -name "com.microsoft.*" -not -name "$O2016LICFILE" -delete  | tee -a ${LOG}
   /bin/rm -R /Library/PrivilegedHelperTools/com.microsoft.* | tee -a ${LOG}
 
   # Clean the receipt database i.e. forget packages:
